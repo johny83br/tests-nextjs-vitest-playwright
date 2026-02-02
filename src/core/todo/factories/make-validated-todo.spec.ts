@@ -1,5 +1,5 @@
 import * as sanitizeStrMod from '@/utils/sanitize-str';
-import { makeValidatedTodo } from './make-validated-todo';
+import { InvalidTodo, makeValidatedTodo, ValidTodo } from './make-validated-todo';
 import * as validateTodoDescriptionMod from '../schemas/validate-todo-description';
 import * as makeNewTodoMod from './make-new-todo';
 
@@ -20,60 +20,51 @@ describe('makeValidatedTodo (unit)', () => {
     // Mock o retorno da sanitizeStr
     sanitizeStrSpy.mockReturnValue(sanitizeStrReturn);
 
-    const result = makeValidatedTodo(description);
-
-    // console.log(result);
+    makeValidatedTodo(description) as ValidTodo;
 
     expect(validateTodoDescriptionSpy).toHaveBeenCalledExactlyOnceWith(sanitizeStrReturn);
-    // expect(result).toStrictEqual({
-    //   success: true,
-    //   data: {
-    //     id: 'any-id',
-    //     description: 'abcde',
-    //     createdAt: '2026-02-02T14:36:42.968Z'
-    //   }
-    // })
-    expect(result.success).toBe(true);
-    // expect(result.data).toStrictEqual({
-    //     id: 'any-id',
-    //     description: 'abcde',
-    //     createdAt: expect.any(String)
-    // });
-    expect(result.data.id).toBe('any-id');
-    expect(result.data.description).toBe('abcde');
-    // expect(result.data.createdAt).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/);
-    expect(result.data.createdAt).toBe('any-date');
 
   });
 
   test('deve chamar makeNewTodo se validatedDescription se retornou sucesso', () => {
 
-    // const {sanitizeStrSpy, 
-    //   description, 
-    //   validateTodoDescriptionSpy, 
-    //   makeNewTodoSpy, 
-    //   todo} = makeMocks('abcde'); // Pegando os spies
+    const {description} = makeMocks('abcde'); // Pegando os spies
 
-    // // Variável que será o retorno da sanitizeStr
-    // const sanitizeStrReturn = 'retorno da sanitizeStr';
+    const result = makeValidatedTodo(description) as ValidTodo;
 
-    // // Mock o retorno da sanitizeStr
-    // sanitizeStrSpy.mockReturnValue(sanitizeStrReturn);
+      expect(result.success).toBe(true);
+      // expect(result.data).toStrictEqual({
+      //     id: 'any-id',
+      //     description: 'abcde',
+      //     createdAt: expect.any(String)
+      // });
 
-    // const validatedDescription = makeValidatedTodo(description);
 
-    // if(validatedDescription.success) {
-    //   makeNewTodoSpy.mockReturnValue(todo);
+      expect(result.data.id).toBe('any-id');
 
-    //   // expect(makeNewTodoSpy).toBe(validatedDescription);
-    // }
+      expect(result.data.description).toBe('abcde');
+
+      // expect(result.data.createdAt).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/);
+      expect(result.data.createdAt).toBe('any-date');
 
   });
 
-  // test('deve chamar retornar validatedDescription.errors se a validação falhou', () => {});
+  test('deve chamar retornar validatedDescription.errors se a validação falhou', () => {
+
+    const {description, errors, validateTodoDescriptionSpy} = makeMocks(); // Pegando os spies
+
+    validateTodoDescriptionSpy.mockReturnValue({errors, success: false})
+
+    const result = makeValidatedTodo(description) as InvalidTodo;
+
+    expect(result).toStrictEqual({ errors, success: false });
+
+  });
 });
 
 const makeMocks = (description = 'abcd') => {
+
+  const errors = ['any', 'error'];
 
   const todo = {
     id: 'any-id',
@@ -98,7 +89,8 @@ const makeMocks = (description = 'abcd') => {
     sanitizeStrSpy,
     validateTodoDescriptionSpy,
     makeNewTodoSpy,
-    todo
+    todo,
+    errors
   }
 
 }
