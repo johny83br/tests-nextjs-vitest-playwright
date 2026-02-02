@@ -10,7 +10,8 @@ describe("DrizzleTodoRepository (integration)", () => {
   });
 
   afterAll(async () => {
-    // console.log("Executo depois de cada teste");
+    const { deleteTodoNoWhere } = makeTestTodoRepository();
+    await deleteTodoNoWhere();
   });
 
   describe("findAll", () => {
