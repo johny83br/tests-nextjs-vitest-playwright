@@ -10,7 +10,7 @@ describe("DrizzleTodoRepository (integration)", () => {
   });
 
   afterAll(async () => {
-    console.log("Executo depois de cada teste");
+    // console.log("Executo depois de cada teste");
   });
 
   describe("findAll", () => {
