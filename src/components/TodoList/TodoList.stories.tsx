@@ -8,7 +8,7 @@ const meta: Meta<typeof TodoList> = {
   component: TodoList,
   decorators: [
     (Story) => (
-      <div className="max-w-screen-md mx-auto p-12">
+      <div className="w-100 p-12 mx-auto flex-auto">
         <Story />
       </div>
     ),
