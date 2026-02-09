@@ -7,7 +7,7 @@ const meta = {
   component: TodoForm,
   decorators: [
     (Story) => (
-      <div className="p-12 w-100">
+      <div className="p-12 w-100 flex-auto">
         <Story />
       </div>
     ),

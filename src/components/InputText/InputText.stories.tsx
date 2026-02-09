@@ -8,7 +8,7 @@ const meta: Meta<typeof InputText> = {
   component: InputText,
   decorators: [
     (Story) => (
-      <div className="max-w-5xl mx-auto p-12">
+      <div className="max-w-5xl mx-auto p-12 flex-auto">
         <Story />
       </div>
     ),
