@@ -44,7 +44,7 @@ const meta: Meta<ButtonStoryProps> = {
   },
   decorators: [
     (Story) => (
-      <div className="max-w-screen-lg mx-auto p-12">
+      <div className="max-w-5xl mx-auto p-12">
         <Story />
       </div>
     ),
