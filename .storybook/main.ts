@@ -5,10 +5,14 @@ const config: StorybookConfig = {
     "../src/**/*.stories.@(js|jsx|ts|tsx)",
     "../src/**/stories.@(js|jsx|ts|tsx)",
   ],
+
   framework: "@storybook/nextjs",
   staticDirs: ["../public"],
+
   features: {
     backgrounds: false,
   },
+
+  addons: ["@storybook/addon-docs"]
 };
 export default config;

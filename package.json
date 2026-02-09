@@ -38,6 +38,7 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
+    "@storybook/addon-docs": "^10.2.8",
     "@storybook/nextjs": "^10.2.7",
     "@storybook/nextjs-vite": "^10.2.7",
     "@storybook/react": "^10.2.7",
