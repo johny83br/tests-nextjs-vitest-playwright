@@ -25,7 +25,9 @@
     "test:e2e:ui": "dotenv -e .env.e2e -- playwright test --ui --reporter null",
     "test:e2e:report": "dotenv -e .env.e2e -- playwright show-report",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "format:fix": "prettier --write \"src/**/*.{js,ts,jsx,tsx,json,css,md}\"",
+    "format:check": "prettier --check \"src/**/*.{js,ts,jsx,tsx,json,css,md}\""
   },
   "dependencies": {
     "better-sqlite3": "^12.6.2",
