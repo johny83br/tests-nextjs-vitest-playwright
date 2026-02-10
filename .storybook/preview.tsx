@@ -1,12 +1,12 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from '@storybook/react';
 
-import "../src/app/globals.css";
-import "./storybook.css";
+import '../src/app/globals.css';
+import './storybook.css';
 
 const preview: Preview = {
   decorators: [
-    (Story) => (
-      <div className="flex justify-center items-center h-11/12">
+    Story => (
+      <div className='flex justify-center items-center h-11/12'>
         {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
         <Story />
       </div>
@@ -16,9 +16,9 @@ const preview: Preview = {
     backgrounds: {
       values: [
         // { name: 'dark', value: '#000000' },
-        { name: "light", value: "ffffff" },
+        { name: 'light', value: 'ffffff' },
       ],
-      default: "light",
+      default: 'light',
     },
     controls: {
       matchers: {

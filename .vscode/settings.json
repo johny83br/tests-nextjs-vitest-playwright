@@ -12,10 +12,7 @@
     "typescript": "npx dotenv -e .env.development -- tsx"
   },
   "tailwindCSS.experimental.classRegex": [
-    [
-      "clsx\\(([^)]*)\\)",
-      "(?:'|\"|`)([^']*)(?:'|\"|`)"
-    ]
+    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"

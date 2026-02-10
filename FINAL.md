@@ -68,7 +68,7 @@ Altere o trecho:
 
 ```js
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
 ];
 ```
 
@@ -77,9 +77,9 @@ Para incluir o Prettier:
 ```js
 const eslintConfig = [
   ...compat.extends(
-    "next/core-web-vitals",
-    "next/typescript",
-    "plugin:prettier/recommended", // isso foi adicionado
+    'next/core-web-vitals',
+    'next/typescript',
+    'plugin:prettier/recommended', // isso foi adicionado
   ),
 ];
 ```
