@@ -1,4 +1,4 @@
-import { getFullEnv } from "@/env/config";
+import { getFullEnv } from "@/env/configs";
 import { defineConfig } from "drizzle-kit";
 
 const { databaseFile, drizzleMigrationsFolder, drizzleSchemaFiles } =

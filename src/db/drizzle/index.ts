@@ -1,5 +1,5 @@
 import { todoTable } from "@/core/todo/schemas/drizzle-todo-table.schema";
-import { getFullEnv } from "@/env/config";
+import { getFullEnv } from "@/env/configs";
 import Database from "better-sqlite3";
 import { drizzle } from "drizzle-orm/better-sqlite3";
 import { migrate } from "drizzle-orm/better-sqlite3/migrator";
