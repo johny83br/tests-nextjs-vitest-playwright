@@ -6,9 +6,9 @@ describe('validateTodoDescription (unit)', () => {
     const result = validateTodoDescription(description);
 
     expect(result.errors).toStrictEqual([
-      'Descrição precisa ter mais de 3 caracteres'
+      'Descrição precisa ter mais de 3 caracteres',
     ]);
-    
+
     expect(result.success).toBe(false);
   });
 
@@ -17,7 +17,7 @@ describe('validateTodoDescription (unit)', () => {
     const result = validateTodoDescription(description);
 
     expect(result.errors).toStrictEqual([]);
-    
+
     expect(result.success).toBe(true);
-  })
+  });
 });

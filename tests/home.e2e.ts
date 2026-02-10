@@ -99,7 +99,7 @@ test.describe("<Home /> (E2E)", () => {
       await expect(todo2Item).toBeVisible();
     });
 
-    test("deve desativar o input enquanto cria o TODO", async ({ page }) => {
+    test("deve desativar o botão enquanto cria o TODO", async ({ page }) => {
       const { button, input, buttonBusy } = getAll(page);
 
       await input.fill(NEW_TODO_TEXT);

@@ -12,8 +12,8 @@ describe('makeNewTodo (unit)', () => {
     const expectedTodo = {
       id: expect.any(String),
       description: 'meu novo todo',
-      createdAt: expect.any(String)
-    }
+      createdAt: expect.any(String),
+    };
 
     // Act
     const newTodo = makeNewTodo('meu novo todo');
@@ -25,4 +25,4 @@ describe('makeNewTodo (unit)', () => {
     // Checando o objeto inteiro
     expect(newTodo).toStrictEqual(expectedTodo);
   });
-})
+});

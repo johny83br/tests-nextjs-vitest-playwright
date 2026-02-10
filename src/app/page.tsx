@@ -1,6 +1,6 @@
-import { TodoContainer } from "@/components/TodoContainer";
+import { TodoContainer } from '@/components/TodoContainer';
 
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
 export default function Home() {
   return <TodoContainer />;
